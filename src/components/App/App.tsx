@@ -22,7 +22,7 @@ export type ImageType = {
 
 function App() {
   const [images, setImages] = useState<ImageType[]>([]);
-  const [query, setQuery] = useState<string>("Cat");
+  const [query, setQuery] = useState<string>("Palma de Mallorca");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);
@@ -77,10 +77,11 @@ function App() {
       ) : (
         <ImageGallery images={images} onImageClick={handleImageClick} />
       )}
-      {loading && <Loader loading={loading} />}
-      {images.length > 0 && !error && (
-        <LoadMoreBtn page={page} setPage={setPage} />
-      )}
+     {loading && <Loader />}
+{images.length > 0 && !error && (
+  <LoadMoreBtn page={page} setPage={setPage} />
+)}
+
       <ImageModal
         isOpen={!!selectedImage}
         onClose={closeModal}

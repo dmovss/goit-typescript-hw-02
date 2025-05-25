@@ -1,9 +1,8 @@
 import React from 'react';
+import styles from './Loader.module.css';
 
 const Loader: React.FC = () => (
-  <div style={{ textAlign: 'center', marginTop: 20 }}>
-    <p>Loading...</p>
-  </div>
+  <div className={styles.loader}>Loading...</div>
 );
 
 export default Loader;
